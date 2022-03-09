@@ -69,20 +69,55 @@
 
 // Concaténation
 
-$a = "texte";
-$b = " modifié";
-var_dump($a . $b);
+// $a = "texte";
+// $b = " modifié";
+// var_dump($a . $b);
 
-$a .= ' modifié';  // $a = $a . " modifié"
-var_dump($a);
-
-$c = "La chaîne vaut {$a}";
+// $a .= ' modifié';  // $a = $a . " modifié"
+// var_dump($a);
 
 // $c = "La chaîne vaut {$a}";
-// var_dump($d);
 
-$objet = "livre";
-var_dump("Des $objet s");
+// $objet = "livre";
 
-const MOT = "Bonjour";
-var_dump("Il a dit {MOT}");
+// var_dump("Des {$objet}s");
+
+// // $c = "La chaîne vaut {$a}";
+// // var_dump($d);
+
+// Opérateurs de comparaison
+
+// >, <, <=, >=
+$a = 10;
+$b = 5;
+
+var_dump($a < $b);
+var_dump($a > $b);
+var_dump($a <= $b);
+var_dump($a >= $b);
+var_dump($a == $b);
+
+$c = '10';
+var_dump($a == $c); // Uniquement les valeurs
+var_dump($a === $c); // Valeurs et types de variable
+
+var_dump($a != $b);
+var_dump($a != $c); // Uniquement les valeurs
+var_dump($a !== $c); // Valeurs et types de variable
+
+var_dump($a <=> $b); // 1 si supérieur, -1 si inférieur, 0 si égalité
+var_dump($b <=> $a); // 1 si supérieur, -1 si inférieur, 0 si égalité
+var_dump($a <=> $c); // 1 si supérieur, -1 si inférieur, 0 si égalité
+
+// Opérateurs logiques
+
+// AND (&&): ET
+$a > 2 && $a < 10;
+// OR (||): OU 
+$a < 2 || $a > 10;
+// XOR : OU exclusif
+$a < 2 xor $a > 10;
+
+// NOT (!):NON
+!true; // false
+!false; // true
