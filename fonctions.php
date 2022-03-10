@@ -65,23 +65,107 @@ $b = 1;
 // $d = 1;
 // var_dump(boolval($d));
 
-var_dump(boolval(0));
-var_dump(boolval(1));
-var_dump(boolval(2));
-var_dump(boolval(-2));
-var_dump(boolval(1.5));
+// var_dump(boolval(0));
+// var_dump(boolval(1));
+// var_dump(boolval(2));
+// var_dump(boolval(-2));
+// var_dump(boolval(1.5));
 
-var_dump(boolval([]));
-var_dump(boolval([1, 2, 3]));
+// var_dump(boolval([]));
+// var_dump(boolval([1, 2, 3]));
 
-var_dump(boolval(''));
-var_dump(boolval('abc'));
+// var_dump(boolval(''));
+// var_dump(boolval('abc'));
 
-var_dump(boolval(null));
+// var_dump(boolval(null));
 
-if ($resultat) {
-    // int différent de 0
-    // string non vide
-    // tableau non vide
-} else {
+// if ($resultat) {
+//     // int différent de 0
+//     // string non vide
+//     // tableau non vide
+// } else {
+// }
+
+// $a = 1;
+// settype($a, 'string');
+// var_dump($a);
+
+// $a = (int) 123.45;
+// var_dump($a);
+// (int), (integer)
+// (bool), (boolean)
+// (float), (double), (real)
+// (string)
+// (array)
+
+// $tab = (array) $a;
+// var_dump($tab);
+// $a = (string) $a;
+// $a = "abc";
+// var_dump($a);
+
+function non_nullable(?int $arg)
+// function non_nullable(int $arg = null)
+{
+    var_dump($arg);
 }
+
+// non_nullable(12);
+// non_nullable(null);
+
+function retour(): array
+{
+    $a = array();
+    return $a;
+}
+
+// var_dump(retour());
+
+$a = 10;
+$b = 20;
+
+function portee1($arg1, $arg2)
+{
+    // $c = 50;
+    global $a, $b;
+    // $a++;
+    return $a + $b;
+    // return $arg1 + $arg2;
+}
+
+// var_dump(portee1($a, $b));
+// var_dump($a);
+// var_dump($c);
+
+function moyenne($arg1, $arg2, $arg3)
+{
+    return ($arg1 + $arg2 + $arg3) / 3;
+}
+
+// var_dump(moyenne(5, 10, 15));
+
+
+function moyenne2(...$arg)
+{
+    $total = 0;
+    $compteur = 0;
+    foreach ($arg as $nombre) {
+        $total += $nombre;
+        $compteur++;
+    }
+    return $total / $compteur;
+}
+
+// var_dump(moyenne2(1, 2, 3, 4, 5, 6, 7));
+// var_dump(moyenne2(1, 2, 3, 4));
+
+
+function moyenne3(): void // void: cette fonction ne retourne rien
+{
+    var_dump(func_num_args()); // nombre de paramètres passés
+    var_dump(func_get_args()); // tableau des paramètres passés
+    // var_dump(func_get_arg()); // valeur d'un paramètre passé
+}
+
+var_dump(moyenne3(1, 2, 3, 4, 5, 6, 7));
+var_dump(moyenne3(1, 2, 3, 4));
